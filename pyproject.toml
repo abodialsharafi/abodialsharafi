@@ -1,0 +1,31 @@
+[project]
+name = "swift_invoice_app"
+version = "1.0.0"
+description = "Qasemi Islamic Microfinance Bank SWIFT System"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "flet>=0.86.0",
+    "reportlab>=3.6.0",
+    "pillow>=9.0.0",
+    "pypdf>=3.0.0",
+    "arabic-reshaper>=3.0.0",
+    "python-bidi>=0.4.2",
+]
+
+[tool.flet]
+org = "com.qasemi.bank"
+product = "SWIFTTransferApp"
+company = "Qasemi Islamic Microfinance Bank"
+copyright = "Copyright 2026 Qasemi Bank"
+
+[tool.flet.app]
+path = "."
+
+[tool.flet.android]
+permissions = [
+    "READ_EXTERNAL_STORAGE",
+    "WRITE_EXTERNAL_STORAGE",
+    "MANAGE_EXTERNAL_STORAGE",
+    "INTERNET"
+]

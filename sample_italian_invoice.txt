@@ -1,0 +1,11 @@
+
+    FAATTURA / INVOICE
+    Numero documento: 292
+    Data doc.: 24-08-2026
+    Intestatario documento: ALOMAISI CLOTHES IMPORTING
+    Sede legale: ADVANCE AQUA BIO TECHNOLOGIES ITALY SRL
+    Beneficiary of the payment: ADVANCE AQUA BIO TECHNOLOGIES ITALY SRL
+    Modalita di pagamento: 100% T/T ADVANCE
+    Banca d'appoggio: INTESA SANPAOLO SPA
+    Totale documento: 18,881.60 EUR
+    

@@ -1,0 +1,31 @@
+
+    COMMERCIAL INVOICE
+    Invoice No: INV-2026-8899
+    PI No: PI-BL-554411
+    Date: 2026-08-15
+    Payment Terms: 30% T/T advance deposit
+    Delivery Terms: FOB SHANGHAI
+    
+    Customer Name: Al-Qasemi Importing & Trading Ltd
+    Customer Address: Sanaa, Yemen
+    Tel: +967-771234567
+    
+    Beneficiary Name: Shenzhen Global Electronics Corp
+    Beneficiary Address: Industrial Zone, Shenzhen, China
+    Tel: +86-755-88889999
+    
+    Banking Details:
+    Beneficiary Bank/Branch: Bank of China, Shenzhen Branch
+    Beneficiary's Account No: 882910293847
+    IBAN: CN880000882910293847
+    Swift / BIC: BKCHCNBJ110
+    Correspondent Bank: Citibank N.A. New York
+    Correspondent Swift / BIC: CITIUS33XXX
+    
+    Description: High Quality Solar Panel Inverters 5KW
+    Quantity(PCS): 500 PCS
+    Amount (USD): 50000.00
+    Port of Loading: Shanghai Port
+    Port of Destination: Hodeidah Port, Yemen
+    Pre-Carriage By: Sea Freight
+    
