@@ -1,0 +1,51 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install flet
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Pre-install Flutter 3.44.8
+        run: |
+          mkdir -p ~/.flet/flutter/3.44.8 ~/flutter/3.44.8
+          wget -q https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.44.8-stable.tar.xz -O /tmp/flutter.tar.xz
+          tar -xf /tmp/flutter.tar.xz -C ~/flutter/3.44.8 --strip-components=1
+          cp -r ~/flutter/3.44.8/* ~/.flet/flutter/3.44.8/ || true
+          rm -f /tmp/flutter.tar.xz
+
+      - name: Build Android APK
+        env:
+          FLET_CLI_NO_RICH_OUTPUT: "1"
+        run: |
+          yes | flet build apk --no-rich-output --yes
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Qasemi-Bank-SWIFT-App
+          path: build/apk/*.apk
