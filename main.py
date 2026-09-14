@@ -1138,21 +1138,25 @@ def main(page: ft.Page):
     # Header Title & Qasemi Logo
     header_title = ft.Text(
         "بنك القاسمي للتمويل الأصغر الإسلامي - طلب إصدار حوالة خارجية",
-        size=18,
+        size=14,
         weight=ft.FontWeight.BOLD,
         color=PRIMARY_COLOR,
-        text_align=ft.TextAlign.LEFT,
+        text_align=ft.TextAlign.RIGHT,
+        max_lines=2,
+        overflow=ft.TextOverflow.ELLIPSIS,
     )
     header_subtitle = ft.Text(
-        "QASEMI ISLAMIC MICROFINANCE BANK - FOREIGN MONEY TRANSFER ORDER",
-        size=12,
+        "FOREIGN MONEY TRANSFER ORDER",
+        size=10,
         weight=ft.FontWeight.BOLD,
         color=ft.Colors.BLUE_GREY_700,
-        text_align=ft.TextAlign.LEFT,
+        text_align=ft.TextAlign.RIGHT,
+        max_lines=1,
+        overflow=ft.TextOverflow.ELLIPSIS,
     )
 
     logo_src = get_logo_b64_src()
-    logo_img = ft.Image(src=logo_src, width=220, height=65, fit="contain") if logo_src else ft.Container()
+    logo_img = ft.Image(src=logo_src, width=150, height=45, fit="contain") if logo_src else ft.Container()
 
     header_container = ft.Container(
         content=ft.Row(
@@ -1162,10 +1166,11 @@ def main(page: ft.Page):
                     content=ft.Column(
                         [header_title, header_subtitle],
                         alignment=ft.MainAxisAlignment.CENTER,
-                        horizontal_alignment=ft.CrossAxisAlignment.END,
+                        horizontal_alignment=ft.CrossAxisAlignment.START,
+                        spacing=2,
                     ),
                     expand=True,
-                    padding=ft.padding.Padding(15, 0, 15, 0),
+                    padding=ft.padding.Padding(8, 0, 8, 0),
                 ),
                 ft.Container(
                     content=btn_exit_app,
@@ -1173,11 +1178,12 @@ def main(page: ft.Page):
                 ),
             ],
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-            vertical_alignment=ft.CrossAxisAlignment.START,
+            vertical_alignment=ft.CrossAxisAlignment.CENTER,
         ),
-        padding=ft.padding.Padding(10, 4, 10, 4),
+        padding=ft.padding.Padding(6, 4, 6, 4),
     )
 
+    page.scroll = ft.ScrollMode.AUTO
     page.add(
         header_container,
         top_action_bar,
